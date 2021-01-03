@@ -21,4 +21,16 @@ public class User {
     @Column(length = 50)
     private String id;
 
+    private String username;
+
+    private String password;
+
+    private String createdDate;
+
+    private String email;
+
+    private String name;
+
+    private Integer age;
+
 }
