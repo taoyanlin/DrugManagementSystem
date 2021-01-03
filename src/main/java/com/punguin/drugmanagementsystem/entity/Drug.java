@@ -14,6 +14,9 @@ import javax.persistence.Table;
 public class Drug {
     private String id;
 
+    //药品照片（考虑有多个照片的情况，暂时先定义这个参数，之后统一存放到照片的多对多表中）
+    private byte[] drugPhoto;
+
     //药品名称
     private String drugNames;
 
