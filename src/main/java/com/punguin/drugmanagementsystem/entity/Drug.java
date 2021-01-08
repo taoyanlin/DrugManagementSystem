@@ -44,4 +44,7 @@ public class Drug {
     //该药品的保质期
     private String 有效期;
 
+    //状态
+    private String status;
+
 }

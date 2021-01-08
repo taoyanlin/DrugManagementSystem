@@ -1,4 +1,4 @@
-package com.punguin.drugmanagementsystem.model;
+package com.punguin.drugmanagementsystem.model.from;
 
 /**
  * 药品查询model

@@ -1,7 +1,8 @@
 package com.punguin.drugmanagementsystem.service;
 
 import com.punguin.drugmanagementsystem.entity.Drug;
-import com.punguin.drugmanagementsystem.model.DrugSearchModel;
+import com.punguin.drugmanagementsystem.model.from.DrugSearchModel;
+import com.punguin.drugmanagementsystem.model.to.DrugModel;
 
 import java.util.List;
 
@@ -11,14 +12,14 @@ public interface DrugService {
      * 查询所有的药品信息（考虑到多条件查询，暂时未做处理）
      * @return 药品集合
      */
-    List<Drug> findAllDrugs(DrugSearchModel searchModel);
+    List<DrugModel> findAllDrugs(DrugSearchModel searchModel);
 
     /**
      * 查找某个药品的详细信息
      * @param id 药品的ID
      * @return 药品的详细信息
      */
-    Drug findById(String id);
+    DrugModel findById(String id);
 
     /**
      * 删除药品信息（考虑软删除还是硬删除）
