@@ -17,6 +17,7 @@ import org.springframework.web.client.RestTemplate;
  */
 @Api("user类")
 @RestController
+@RequestMapping("/user")
 public class UserController extends BaseController {
 
     @Autowired

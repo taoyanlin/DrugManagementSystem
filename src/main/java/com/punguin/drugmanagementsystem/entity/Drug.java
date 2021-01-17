@@ -21,30 +21,30 @@ public class Drug {
     private String drugNames;
 
     //药品每盒数量
-    private String 数量;
+    private String quantity;
 
     //药品的首字母拼音
     private String 药品拼音;
 
     //药品每盒数量的单位 （颗、克、包）
-    private String 单位;
+    private String unit;
 
     //药品生产厂家
-    private String 生产厂家;
+    private String manufacturer;
 
     //该药品的生产批次
-    private String 生产批次;
+    private String productionBatch;
 
     //该药品用于治疗什么疾病
-    private String 疗效;
+    private String curativeEffect;
 
     //该药品的生产日期
-    private String 生产日期;
+    private String productionDate;
 
     //该药品的保质期
-    private String 有效期;
+    private String validPeriod;
 
-    //状态
+    //状态（0 为删除 1为存在）
     private String status;
 
 }

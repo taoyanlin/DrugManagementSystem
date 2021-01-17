@@ -15,11 +15,11 @@ public class Order {
     private String id;
 
 
-    private String 采购单位;
+    private String purchasingUnit;
 
-    private String 采购人员;
+    private String procurementStaff;
 
-    private String 采购时间;
+    private String shoppingTime;
 
 
 }

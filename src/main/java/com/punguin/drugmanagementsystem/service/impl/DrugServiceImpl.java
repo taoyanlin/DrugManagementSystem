@@ -74,7 +74,7 @@ public class DrugServiceImpl implements DrugService {
 
     @Override
     public String saveDrug(Drug drug) {
-
-        return null;
+        drugRepository.save(drug);
+        return "success";
     }
 }
