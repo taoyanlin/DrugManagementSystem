@@ -26,7 +26,10 @@ public class UserController extends BaseController {
 
     @ApiOperation("登录接口")
     @RequestMapping("/login")
-    public ResponseResult<User> login(String username){
+    public ResponseResult<User> login(String username,String password){
+
+        System.out.println("username:"+username);
+        System.out.println("password:"+password);
         User user = userService.findByUserName(username);
         return Success(user);
     }
