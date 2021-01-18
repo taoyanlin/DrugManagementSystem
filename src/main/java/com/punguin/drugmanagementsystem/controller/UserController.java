@@ -3,6 +3,7 @@ package com.punguin.drugmanagementsystem.controller;
 import com.punguin.drugmanagementsystem.controller.common.BaseController;
 import com.punguin.drugmanagementsystem.entity.User;
 import com.punguin.drugmanagementsystem.entity.common.ResponseResult;
+import com.punguin.drugmanagementsystem.service.UserService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,14 +22,12 @@ import org.springframework.web.client.RestTemplate;
 public class UserController extends BaseController {
 
     @Autowired
-    private RestTemplateBuilder restTemplateBuilder;
+    private UserService userService;
 
     @ApiOperation("登录接口")
     @RequestMapping("/login")
-    public ResponseResult<User> login(){
-
-        RestTemplate restTemplate1 = restTemplateBuilder.build();
-        User user = new User();
+    public ResponseResult<User> login(String username){
+        User user = userService.findByUserName(username);
         return Success(user);
     }
 
