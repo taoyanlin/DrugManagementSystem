@@ -24,7 +24,7 @@ public class Drug {
     private String quantity;
 
     //药品的首字母拼音
-    private String 药品拼音;
+    private String pinyinName;
 
     //药品每盒数量的单位 （颗、克、包）
     private String unit;
