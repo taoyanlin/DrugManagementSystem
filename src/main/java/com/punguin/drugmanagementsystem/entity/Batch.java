@@ -3,7 +3,9 @@ package com.punguin.drugmanagementsystem.entity;
 
 import lombok.Data;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.Id;
 import javax.persistence.Table;
 
 /**
@@ -13,6 +15,8 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "BATCH")
 public class Batch {
+    @Id
+    @Column(length = 50)
     private String id;
 
     //批次时间

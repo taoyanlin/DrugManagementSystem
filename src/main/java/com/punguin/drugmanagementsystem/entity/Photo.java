@@ -1,5 +1,8 @@
 package com.punguin.drugmanagementsystem.entity;
 
+import javax.persistence.Column;
+import javax.persistence.Id;
+
 /**
  * 照片类（所有的照片的对应关系都存在这张表里）
  */
@@ -7,6 +10,8 @@ public class Photo {
     /**
      * 主键
      */
+    @Id
+    @Column(length = 50)
     private String id;
 
     /**
