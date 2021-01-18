@@ -1,11 +1,18 @@
 package com.punguin.drugmanagementsystem.entity;
 
+import lombok.Data;
+
 import javax.persistence.Column;
+import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.Table;
 
 /**
  * 照片类（所有的照片的对应关系都存在这张表里）
  */
+@Data
+@Entity
+@Table(name = "PHOTO")
 public class Photo {
     /**
      * 主键
