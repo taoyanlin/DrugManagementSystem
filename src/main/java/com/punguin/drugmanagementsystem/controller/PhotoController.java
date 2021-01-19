@@ -7,6 +7,5 @@ import org.springframework.web.bind.annotation.RestController;
 @Api("photo类")
 @RestController
 @RequestMapping("/photo")
-@CrossOrigin
 public class PhotoController {
 }

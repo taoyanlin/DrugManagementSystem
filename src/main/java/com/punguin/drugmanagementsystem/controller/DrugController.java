@@ -12,7 +12,6 @@ import org.springframework.web.bind.annotation.RestController;
 @Api("药品类")
 @RestController
 @RequestMapping("/drug")
-@CrossOrigin
 public class DrugController {
 
     @Autowired
