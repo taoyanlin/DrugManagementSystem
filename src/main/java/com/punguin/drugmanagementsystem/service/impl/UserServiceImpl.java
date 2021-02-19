@@ -1,6 +1,7 @@
 package com.punguin.drugmanagementsystem.service.impl;
 
 import com.punguin.drugmanagementsystem.entity.User;
+import com.punguin.drugmanagementsystem.exception.SystemException;
 import com.punguin.drugmanagementsystem.repository.UserRepository;
 import com.punguin.drugmanagementsystem.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,15 +23,12 @@ public class UserServiceImpl implements UserService {
         }
         List<User> userByName = userRepository.findByUsername(username);
         if (userByName.size() != 1) {
-            return new User();
+
         }
-
         User user = userByName.get(0);
-
         /**
          * 添加登录验证
          */
-
         return user;
     }
 }
