@@ -24,7 +24,8 @@ public class DrugController extends BaseController {
     private DrugService drugService;
 
     @RequestMapping("/findAll")
-    public ResponseResult<List<Drug>> findAll(@RequestBody DrugSearchModel searchModel) {
+    public ResponseResult<List<Drug>> findAll() {
+        DrugSearchModel searchModel = new DrugSearchModel();
         List<Drug> allDrugs = drugService.findAllDrugs(searchModel);
         return Success(allDrugs);
     }
