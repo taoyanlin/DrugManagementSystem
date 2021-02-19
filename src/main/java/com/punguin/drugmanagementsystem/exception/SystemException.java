@@ -3,7 +3,7 @@ package com.punguin.drugmanagementsystem.exception;
 /**
  * @author ASUS
  */
-public class SystemException extends Exception{
+public class SystemException extends Exception {
 
     private Integer errorCode;
     private String errorMessage;
@@ -22,6 +22,10 @@ public class SystemException extends Exception{
 
     public void setErrorMessage(String errorMessage) {
         this.errorMessage = errorMessage;
+    }
+
+    public SystemException() {
+
     }
 
 

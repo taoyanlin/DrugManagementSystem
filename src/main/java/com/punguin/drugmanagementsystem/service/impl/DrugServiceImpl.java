@@ -2,11 +2,13 @@ package com.punguin.drugmanagementsystem.service.impl;
 
 import com.punguin.drugmanagementsystem.entity.Drug;
 import com.punguin.drugmanagementsystem.entity.Photo;
+import com.punguin.drugmanagementsystem.exception.SystemException;
 import com.punguin.drugmanagementsystem.model.from.DrugSearchModel;
 import com.punguin.drugmanagementsystem.model.to.DrugModel;
 import com.punguin.drugmanagementsystem.repository.DrugRepository;
 import com.punguin.drugmanagementsystem.repository.PhotoRepository;
 import com.punguin.drugmanagementsystem.service.DrugService;
+import com.punguin.drugmanagementsystem.utils.IDUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -37,7 +39,7 @@ public class DrugServiceImpl implements DrugService {
         if (optional == null) {
             return drugModel;
         }
-        
+
         Drug drug = optional.get();
         /**
          * 缺少照片（需要查询数据库中的对应照片）
@@ -48,23 +50,26 @@ public class DrugServiceImpl implements DrugService {
 
         drugModel.setDrug(drug);
         drugModel.setPhotos(photos);
-    return drugModel;
+        return drugModel;
     }
 
     @Override
-    public String deleteDrug(List<String> id) {
+    public String deleteDrug(List<String> id) throws SystemException {
 
         for (String s : id) {
             Optional<Drug> drug = drugRepository.findById(s);
-            if (drug.isPresent()){
+            if (!drug.isPresent()) {
+                throw new SystemException();
             }
         }
-        return null;
+        return "success";
     }
 
     @Override
     public String modifyDrug(Drug drug) {
-        return null;
+        drugRepository.save(drug);
+
+        return "success";
     }
 
     @Override
@@ -73,8 +78,10 @@ public class DrugServiceImpl implements DrugService {
     }
 
     @Override
-    public String saveDrug(Drug drug) {
+    public void saveDrug(Drug drug) {
+
+        drug.setId(IDUtil.getID());
         drugRepository.save(drug);
-        return "success";
+
     }
 }

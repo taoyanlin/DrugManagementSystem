@@ -1,6 +1,7 @@
 package com.punguin.drugmanagementsystem.service;
 
 import com.punguin.drugmanagementsystem.entity.Drug;
+import com.punguin.drugmanagementsystem.exception.SystemException;
 import com.punguin.drugmanagementsystem.model.from.DrugSearchModel;
 import com.punguin.drugmanagementsystem.model.to.DrugModel;
 
@@ -26,7 +27,7 @@ public interface DrugService {
      * @param id 药品的ID
      * @return 成功或者失败
      */
-    String deleteDrug(List<String> id);
+    String deleteDrug(List<String> id) throws SystemException;
 
     /**
      * 修改药品信息
@@ -46,6 +47,6 @@ public interface DrugService {
      * @param drug 药品信息
      * @return 成功或者失败
      */
-    String saveDrug(Drug drug);
+    void saveDrug(Drug drug);
 
 }
