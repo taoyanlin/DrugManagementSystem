@@ -50,6 +50,18 @@ public class Drug {
     //该药品的保质期
     private String validPeriod;
 
+    //改药品的使用禁忌
+    private String taboo;
+
+    //药品的批准号
+    private String approvalNumber;
+
+    //药品的不良反应
+    private String reactions;
+
+    //是否为处方药
+    private String radio;
+
     //状态（0 为删除 1为存在）
     private String status;
 

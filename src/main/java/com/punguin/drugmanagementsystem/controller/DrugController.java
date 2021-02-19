@@ -32,7 +32,6 @@ public class DrugController extends BaseController {
 
         System.out.println(drug.toString());
 
-
         return Success("成功");
     }
 }
