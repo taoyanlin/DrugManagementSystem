@@ -44,6 +44,9 @@ public class Drug {
     //该药品用于治疗什么疾病
     private String curativeEffect;
 
+    //该药品的主要成分
+    private String component;
+
     //该药品的生产日期
     private String productionDate;
 
