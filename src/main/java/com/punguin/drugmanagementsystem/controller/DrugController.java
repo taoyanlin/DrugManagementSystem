@@ -9,6 +9,7 @@ import com.punguin.drugmanagementsystem.service.DrugService;
 import io.swagger.annotations.Api;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -23,13 +24,13 @@ public class DrugController extends BaseController {
     private DrugService drugService;
 
     @RequestMapping("/findAll")
-    public ResponseResult<Drug> findAll(DrugSearchModel searchModel) {
-
-        return new ResponseResult<>();
+    public ResponseResult<List<Drug>> findAll(@RequestBody DrugSearchModel searchModel) {
+        List<Drug> allDrugs = drugService.findAllDrugs(searchModel);
+        return Success(allDrugs);
     }
 
     @RequestMapping("/addDrug")
-    public ResponseResult<String> addDrug(Drug drug) {
+    public ResponseResult<String> addDrug(@RequestBody Drug drug) {
 
         drugService.saveDrug(drug);
 
@@ -37,14 +38,14 @@ public class DrugController extends BaseController {
     }
 
     @RequestMapping("/updateDrug")
-    public ResponseResult<String> updateDrug(Drug drug) {
+    public ResponseResult<String> updateDrug(@RequestBody Drug drug) {
         drugService.modifyDrug(drug);
 
         return Success("成功");
     }
 
     @RequestMapping("/deleteDrug")
-    public ResponseResult<String> deleteDrug(List<String> id) throws SystemException {
+    public ResponseResult<String> deleteDrug(@RequestBody List<String> id) throws SystemException {
         drugService.deleteDrug(id);
 
         return Success("成功");

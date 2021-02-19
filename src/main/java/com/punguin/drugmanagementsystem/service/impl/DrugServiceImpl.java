@@ -26,8 +26,10 @@ public class DrugServiceImpl implements DrugService {
     private PhotoRepository photoRepository;
 
     @Override
-    public List<DrugModel> findAllDrugs(DrugSearchModel searchModel) {
-        return null;
+    public List<Drug> findAllDrugs(DrugSearchModel searchModel) {
+
+        List<Drug> all = drugRepository.findAll();
+        return all;
     }
 
     @Override

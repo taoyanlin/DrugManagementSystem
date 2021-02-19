@@ -13,7 +13,7 @@ public interface DrugService {
      * 查询所有的药品信息（考虑到多条件查询，暂时未做处理）
      * @return 药品集合
      */
-    List<DrugModel> findAllDrugs(DrugSearchModel searchModel);
+    List<Drug> findAllDrugs(DrugSearchModel searchModel);
 
     /**
      * 查找某个药品的详细信息
