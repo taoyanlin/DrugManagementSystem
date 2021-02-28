@@ -28,6 +28,9 @@ public class DrugBatch {
     //药品数量
     private String num;
 
+    //该批次药品的生产日期
+    private String productionDate;
+
     //药品备注
     private String remark;
 

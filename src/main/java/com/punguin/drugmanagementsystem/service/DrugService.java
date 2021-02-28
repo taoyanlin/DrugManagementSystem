@@ -47,6 +47,6 @@ public interface DrugService {
      * @param drug 药品信息
      * @return 成功或者失败
      */
-    void saveDrug(Drug drug);
+    String saveDrug(Drug drug);
 
 }

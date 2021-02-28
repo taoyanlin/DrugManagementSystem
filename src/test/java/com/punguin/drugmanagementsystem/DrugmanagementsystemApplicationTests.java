@@ -17,17 +17,17 @@ class DrugmanagementsystemApplicationTests {
 
 
 
-    @Test
-    void contextLoads() throws MalformedURLException {
-        RestTemplate restTemplate1 = restTemplateBuilder.build();
-
-        URL url = new URL("http://127.0.0.1:8080/hello");
-
-        System.out.println(url);
-
-        String forObject = restTemplate1.getForObject("http://127.0.0.1:8080/hello", String.class);
-
-        System.out.println(forObject);
-    }
+//    @Test
+//    void contextLoads() throws MalformedURLException {
+//        RestTemplate restTemplate1 = restTemplateBuilder.build();
+//
+//        URL url = new URL("http://127.0.0.1:8080/hello");
+//
+//        System.out.println(url);
+//
+//        String forObject = restTemplate1.getForObject("http://127.0.0.1:8080/hello", String.class);
+//
+//        System.out.println(forObject);
+//    }
 
 }

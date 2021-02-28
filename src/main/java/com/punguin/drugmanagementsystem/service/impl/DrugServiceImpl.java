@@ -80,10 +80,20 @@ public class DrugServiceImpl implements DrugService {
     }
 
     @Override
-    public void saveDrug(Drug drug) {
+    public String saveDrug(Drug drug) {
+
+        String approvalNumber = drug.getApprovalNumber();
+
+        if (approvalNumber != null) {
+            Drug drug1 = drugRepository.findByApprovalNumber(approvalNumber);
+            if (null != drug1) {
+                return "插入失败";
+            }
+        }
 
         drug.setId(IDUtil.getID());
         drugRepository.save(drug);
+        return "成功";
 
     }
 }
